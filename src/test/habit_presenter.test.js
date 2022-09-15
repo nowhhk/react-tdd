@@ -40,7 +40,6 @@ describe('HabitPresenter', () => {
 
   it('deletes habit from the list', () => {
     presenter.delete(habits[0], update);
-
     expect(presenter.getHabits().length).toBe(1);
     expect(presenter.getHabits()[0].name).toBe('Coding');
     checkUpdateIsCalled();
@@ -74,7 +73,7 @@ describe('HabitPresenter', () => {
       const updatedHabits = presenter.getHabits();
 
       expect(updatedHabits[1]).toBe(habits[1]);
-      //toBe는 오브젝트의 참조값을 비교
+      //toBe는 오브젝트의 참조값을 비교 (오브젝트 불변성 테스트)
       //toEqual는 오브젝트 안의 데이터 값을 비교
     });
   });

@@ -47,6 +47,7 @@ export class HabitPresenter {
       if (habit.count !== 0) {
         return { ...habit, count: 0 };
       }
+      //업데이트 필요한 경우에만 업데이트할수있도록
       return habit;
     });
     update(this.habits);
